@@ -21,7 +21,7 @@ export default function Home() {
       <Navbar onDemoClick={() => setDemoOpen(true)} />
 
       <main>
-        <Hero onDemoClick={() => setDemoOpen(true)} />
+        <Hero />
         <ProblemSolution />
         <CoreFlows />
         <Compliance />
