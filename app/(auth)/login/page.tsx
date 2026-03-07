@@ -12,7 +12,7 @@ export default function LoginPage() {
 
   const [phone, setPhone] = useState("");
   const [otpSent, setOtpSent] = useState(false);
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["", "", "", ""]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [formattedPhone, setFormattedPhone] = useState("");
@@ -60,7 +60,7 @@ export default function LoginPage() {
     newOtp[index] = digit;
     setOtp(newOtp);
 
-    if (digit && index < 5) {
+    if (digit && index < 3) {
       otpRefs.current[index + 1]?.focus();
     }
   };
@@ -73,13 +73,13 @@ export default function LoginPage() {
 
   const handleOtpPaste = (e: React.ClipboardEvent) => {
     e.preventDefault();
-    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 4);
     const newOtp = [...otp];
     for (let i = 0; i < pasted.length; i++) {
       newOtp[i] = pasted[i];
     }
     setOtp(newOtp);
-    const focusIdx = Math.min(pasted.length, 5);
+    const focusIdx = Math.min(pasted.length, 3);
     otpRefs.current[focusIdx]?.focus();
   };
 
@@ -113,7 +113,7 @@ export default function LoginPage() {
     }
   };
 
-  const canSubmit = otpSent ? otpValue.length === 6 : phone.trim().length > 0;
+  const canSubmit = otpSent ? otpValue.length === 4 : phone.trim().length > 0;
 
   const handlePrimary = () => {
     if (otpSent) {
@@ -172,7 +172,7 @@ export default function LoginPage() {
               <input
                 type="tel"
                 value={phone}
-                onChange={(e) => { setPhone(e.target.value); if (otpSent) { setOtpSent(false); setOtp(["", "", "", "", "", ""]); } }}
+                onChange={(e) => { setPhone(e.target.value); if (otpSent) { setOtpSent(false); setOtp(["", "", "", ""]); } }}
                 onKeyDown={(e) => e.key === "Enter" && canSubmit && handlePrimary()}
                 placeholder="5XXXXXXXX"
                 className="flex-1 px-3 py-3 text-[14px] outline-none bg-transparent"
@@ -182,7 +182,7 @@ export default function LoginPage() {
               />
               {otpSent && (
                 <button
-                  onClick={() => { setOtpSent(false); setOtp(["", "", "", "", "", ""]); setError(""); }}
+                  onClick={() => { setOtpSent(false); setOtp(["", "", "", ""]); setError(""); }}
                   className="px-3 text-[12px] font-medium"
                   style={{ color: "#0004E8" }}
                 >
@@ -229,7 +229,7 @@ export default function LoginPage() {
                   ))}
                 </div>
                 <button
-                  onClick={() => { setOtp(["", "", "", "", "", ""]); handleSendOtp(); }}
+                  onClick={() => { setOtp(["", "", "", ""]); handleSendOtp(); }}
                   className="mt-3 text-[12px] font-medium w-full text-center"
                   style={{ color: "rgba(5,5,8,0.35)" }}
                 >

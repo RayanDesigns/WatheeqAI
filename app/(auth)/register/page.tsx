@@ -18,7 +18,7 @@ export default function RegisterPage() {
   const [nationalId, setNationalId] = useState("");
   const [organization, setOrganization] = useState("");
   const [otpSent, setOtpSent] = useState(false);
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["", "", "", ""]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -65,7 +65,7 @@ export default function RegisterPage() {
     const newOtp = [...otp];
     newOtp[index] = digit;
     setOtp(newOtp);
-    if (digit && index < 5) otpRefs.current[index + 1]?.focus();
+    if (digit && index < 3) otpRefs.current[index + 1]?.focus();
   };
 
   const handleOtpKeyDown = (index: number, e: React.KeyboardEvent) => {
@@ -74,11 +74,11 @@ export default function RegisterPage() {
 
   const handleOtpPaste = (e: React.ClipboardEvent) => {
     e.preventDefault();
-    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 4);
     const newOtp = [...otp];
     for (let i = 0; i < pasted.length; i++) newOtp[i] = pasted[i];
     setOtp(newOtp);
-    otpRefs.current[Math.min(pasted.length, 5)]?.focus();
+    otpRefs.current[Math.min(pasted.length, 3)]?.focus();
   };
 
   const otpValue = otp.join("");
@@ -124,7 +124,7 @@ export default function RegisterPage() {
   };
 
   const detailsFilled = fullName.trim() && phone.trim();
-  const canSubmit = otpSent ? otpValue.length === 6 : detailsFilled;
+  const canSubmit = otpSent ? otpValue.length === 4 : detailsFilled;
 
   const handlePrimary = () => {
     if (otpSent) handleVerifyAndRegister();
@@ -207,7 +207,7 @@ export default function RegisterPage() {
               ]).map((opt) => (
                 <button
                   key={opt.id}
-                  onClick={() => { setRole(opt.id); if (otpSent) { setOtpSent(false); setOtp(["","","","","",""]); } }}
+                  onClick={() => { setRole(opt.id); if (otpSent) { setOtpSent(false); setOtp(["", "", "", ""]); } }}
                   className="flex-1 py-2.5 rounded-lg text-[13px] font-semibold transition-all border"
                   style={{
                     background: role === opt.id ? "#0004E8" : "transparent",
@@ -252,7 +252,7 @@ export default function RegisterPage() {
                 <input
                   type="tel"
                   value={phone}
-                  onChange={(e) => { setPhone(e.target.value); if (otpSent) { setOtpSent(false); setOtp(["","","","","",""]); } }}
+                  onChange={(e) => { setPhone(e.target.value); if (otpSent) { setOtpSent(false); setOtp(["", "", "", ""]); } }}
                   placeholder="5XXXXXXXX"
                   className="flex-1 px-3 py-2.5 text-[14px] outline-none bg-transparent"
                   style={{ color: "#050508" }}
@@ -323,7 +323,7 @@ export default function RegisterPage() {
                   ))}
                 </div>
                 <button
-                  onClick={() => { setOtp(["","","","","",""]); handleSendOtp(); }}
+                  onClick={() => { setOtp(["", "", "", ""]); handleSendOtp(); }}
                   className="mt-3 text-[12px] font-medium w-full text-center"
                   style={{ color: "rgba(5,5,8,0.35)" }}
                 >

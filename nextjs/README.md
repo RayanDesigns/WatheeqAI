@@ -2,19 +2,19 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-1. **Install dependencies** (run this once after cloning the project):
-
-```bash
-npm install
-```
-
-2. **Start the development server** (from the project folder `C:\Users\NAYEF\OneDrive\Desktop\WatheeqAI`):
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-3. **Open the site in your browser** at [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -28,12 +28,6 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Admin Setup
-
-1. **Create admin in Firebase Console** → Authentication → Users → Add user (email + password).
-2. **Add user profile in Firestore** → Firestore Database → Start collection `users` → Add document with ID = the new user's UID (from Authentication), and fields: `fullName`, `role` (value: `"admin"`), `status` (value: `"active"`), `email`, `createdAt` (timestamp).
-3. **Deploy Firestore rules** → Firestore Database → Rules → Replace with contents of `firestore.rules`, then Publish.
 
 ## Deploy on Vercel
 
