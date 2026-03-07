@@ -11,6 +11,7 @@
 
 # next.js
 /.next/
+/watheeq-ai/
 /out/
 
 # production

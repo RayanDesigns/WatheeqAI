@@ -31,6 +31,8 @@ export default function AdminLoginPage() {
         setError("No admin account with this email");
       } else if (msg.includes("too-many-requests")) {
         setError("Too many attempts. Try again later.");
+      } else if (msg.includes("permission") || msg.includes("insufficient")) {
+        setError("Database access denied. Deploy Firestore rules (see firestore.rules in project).");
       } else {
         setError(msg);
       }
