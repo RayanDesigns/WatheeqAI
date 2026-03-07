@@ -165,6 +165,32 @@ export default function Hero() {
           </p>
         </motion.div>
       </div>
+
+      {/* Trusted by - in hero blank area */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="relative z-10 w-full section-container pb-16 lg:pb-20"
+      >
+        <p className="text-center text-[11px] font-semibold text-text/20 uppercase tracking-[0.2em] mb-6">Trusted by leading organizations</p>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 lg:gap-x-14 gap-y-4">
+          {["Partner Hospital Group", "National TPA", "Saudi Health Network", "Regional Insurance Co.", "MedTech Alliance"].map((logo, i) => (
+            <div key={i} className="flex items-center gap-2 text-text/15 hover:text-text/30 transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0" style={{ opacity: 0.5 }}>
+                {[
+                  <><path key="p" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline key="pl" points="9 22 9 12 15 12 15 22" /></>,
+                  <><rect key="r" x="2" y="7" width="20" height="14" rx="2" /><path key="p" d="M16 7V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3" /></>,
+                  <><path key="p" d="M22 12h-4l-3 9L9 3l-3 9H2" /></>,
+                  <><path key="p" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></>,
+                  <><circle key="c1" cx="12" cy="12" r="10" /><line key="l1" x1="2" y1="12" x2="22" y2="12" /><path key="p" d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>,
+                ][i]}
+              </svg>
+              <span className="text-[13px] font-semibold tracking-wide whitespace-nowrap">{logo}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
