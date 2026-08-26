@@ -202,17 +202,6 @@ export default function SystemDiagram() {
             />
           </div>
 
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
-            <span className="flex items-center gap-2 text-[13px] text-text/40">
-              <span className="w-2 h-2 rounded-full bg-primary" /> Claim requests
-            </span>
-            <span className="flex items-center gap-2 text-[13px] text-text/40">
-              <span className="w-2 h-2 rounded-full bg-accent" /> Responses & decisions
-            </span>
-            <span className="hidden lg:inline text-[13px] text-text/30">
-              Hover over the diagram to see the exchange
-            </span>
-          </div>
         </motion.div>
       </div>
     </section>
