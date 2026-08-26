@@ -29,11 +29,11 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Admin Setup
+## Authentication
 
-1. **Create admin in Firebase Console** → Authentication → Users → Add user (email + password).
-2. **Add user profile in Firestore** → Firestore Database → Start collection `users` → Add document with ID = the new user's UID (from Authentication), and fields: `fullName`, `role` (value: `"admin"`), `status` (value: `"active"`), `email`, `createdAt` (timestamp).
-3. **Deploy Firestore rules** → Firestore Database → Rules → Replace with contents of `firestore.rules`, then Publish.
+This project is the marketing landing page only. Sign-in and registration live in the
+separate portal at [watheeq-ai.vercel.app](https://watheeq-ai.vercel.app) — the "Start free"
+CTA links there directly.
 
 ## Deploy on Vercel
 

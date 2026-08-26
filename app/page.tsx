@@ -3,13 +3,11 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ProblemSolution from "./components/Problems";
-import CoreFlows from "./components/CoreFlows";
-import Compliance from "./components/Compliance";
-import ProductScreens from "./components/ProductScreens";
-import Testimonials from "./components/Testimonials";
-import Qualifier from "./components/Qualifier";
-import FinalCTA from "./components/FinalCTA";
+import Problem from "./components/Problem";
+import Outcomes from "./components/Outcomes";
+import HowItWorks from "./components/HowItWorks";
+import SystemDiagram from "./components/SystemDiagram";
+import ClosingCTA from "./components/ClosingCTA";
 import Footer from "./components/Footer";
 import DemoModal from "./components/DemoModal";
 
@@ -22,13 +20,11 @@ export default function Home() {
 
       <main>
         <Hero />
-        <ProblemSolution />
-        <CoreFlows />
-        <Compliance />
-        <ProductScreens />
-        <Testimonials />
-        <Qualifier />
-        <FinalCTA />
+        <Problem />
+        <Outcomes />
+        <SystemDiagram />
+        <HowItWorks />
+        <ClosingCTA onDemoClick={() => setDemoOpen(true)} />
       </main>
 
       <Footer />

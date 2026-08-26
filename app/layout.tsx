@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/lib/auth-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +16,7 @@ const notoArabic = Noto_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "Watheeq AI — AI-Powered Healthcare Claims Adjudication",
+  title: "Watheeq AI | AI-Powered Healthcare Claims Adjudication",
   description:
     "Streamline Saudi healthcare insurance claims with AI-driven analysis, clause matching, and draft generation. CHI-compliant, human-in-the-loop.",
   keywords: [
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
     "claims management",
   ],
   openGraph: {
-    title: "Watheeq AI — AI-Powered Healthcare Claims Adjudication",
+    title: "Watheeq AI | AI-Powered Healthcare Claims Adjudication",
     description:
       "From 15-day average to 5-day target. Reduce denial rates with AI-driven document analysis.",
     type: "website",
@@ -46,7 +45,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${notoArabic.variable} font-sans antialiased min-h-screen bg-bg text-text`}
       >
-        <AuthProvider>{children}</AuthProvider>
+        {children}
       </body>
     </html>
   );
