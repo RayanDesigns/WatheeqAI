@@ -118,7 +118,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center gap-3"
         >
           <a
-            href="https://watheeq-ai.vercel.app/register"
+            href="https://try-watheeq-ai.vercel.app/register"
             className="px-7 py-3 bg-primary hover:bg-primary-light text-white font-semibold rounded-xl text-[15px] transition-all shadow-lg hover:shadow-xl"
           >
             Start free

@@ -33,7 +33,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Authentication
 
 This project is the marketing landing page only. Sign-in and registration live in the
-separate portal at [watheeq-ai.vercel.app](https://watheeq-ai.vercel.app) — the "Start free"
+separate portal at [try-watheeq-ai.vercel.app](https://try-watheeq-ai.vercel.app). The "Start free"
 CTA links there directly.
 
 ## Deploy on Vercel
