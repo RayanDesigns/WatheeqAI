@@ -116,9 +116,12 @@ function Node({ side, title, sub, icon, hub, integration }: NodeProps) {
               </g>
             </svg>
           </div>
-          <div className="flex items-center justify-center gap-2 rounded-lg bg-primary-50 border border-primary-100 px-3 py-2">
+          <a
+            href="/"
+            className="flex items-center justify-center gap-2 rounded-lg bg-primary-50 border border-primary-100 px-3 py-2 transition-colors hover:bg-primary-100"
+          >
             <Image src="/logo.svg" alt="Watheeq AI" width={74} height={15} />
-          </div>
+          </a>
         </div>
       )}
     </div>
